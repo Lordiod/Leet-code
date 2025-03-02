@@ -1,17 +1,12 @@
-def sortyyyy(arr,n):
-    count = 0
-    
-    for i in range(0,n):
-        if arr[i] == 0:
-            count += 1
-            
-    for i in range(0,count):
-        arr[i] = 0
-    
-    for i in range(count,n):
-        arr[i] = 1
+#https://leetcode.com/problems/two-sum/description/
+# Difficulty: Easy
+class Solution:
+    def twoSum(self ,nums, target):
+        numbers = {}
         
-arr = [0, 1, 0, 1, 0, 0, 1, 1, 1, 0] 
-n= len(arr)
-sortyyyy(arr,n)
-print(arr)
+        for i, num in enumerate(nums):
+            diff = target - num
+            if diff in numbers:
+                return [numbers[diff], i]
+            numbers[num] = i
+        return None
